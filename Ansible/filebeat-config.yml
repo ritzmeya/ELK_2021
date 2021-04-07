@@ -1,0 +1,1018 @@
+Last login: Fri Mar 26 19:11:54 on ttys001
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Ritikas-MBP:~ ritikashrimali$ ssh -i test26march.txt sysadmin@13.82.110.28
+Enter passphrase for key 'test26march.txt': 
+Welcome to Ubuntu 18.04.5 LTS (GNU/Linux 5.4.0-1041-azure x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Sat Mar 27 15:19:25 UTC 2021
+
+  System load:  0.22               Processes:              136
+  Usage of /:   12.8% of 28.90GB   Users logged in:        0
+  Memory usage: 48%                IP address for eth0:    10.0.0.4
+  Swap usage:   0%                 IP address for docker0: 172.17.0.1
+
+ * Introducing self-healing high availability clusters in MicroK8s.
+   Simple, hardened, Kubernetes for production, from RaspberryPi to DC.
+
+     https://microk8s.io/high-availability
+
+ * Canonical Livepatch is available for installation.
+   - Reduce system reboots and improve kernel security. Activate at:
+     https://ubuntu.com/livepatch
+
+9 packages can be updated.
+0 of these updates are security updates.
+To see these additional updates run: apt list --upgradable
+
+New release '20.04.2 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+*** System restart required ***
+Last login: Sat Mar 27 11:31:25 2021 from 157.52.3.60
+sysadmin@RedTeamVM:~$ sudo docker start 95096b9c9214
+95096b9c9214
+sysadmin@RedTeamVM:~$ sudo docker attach 95096b9c9214
+sysadmin@ELK-Machine:~$ sudo docker ps
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS              PORTS                                                                              NAMES
+f4a9bd0ee103        sebp/elk:761          "/usr/local/bin/star…"   3 hours ago         Up 3 hours          0.0.0.0:5044->5044/tcp, 0.0.0.0:5601->5601/tcp, 0.0.0.0:9200->9200/tcp, 9300/tcp   elk
+6587712c778e        cyberxsecurity/dvwa   "/main.sh"               12 hours ago        Up 11 hours         0.0.0.0:80->80/tcp                                                                 dvwa
+sysadmin@ELK-Machine:~$ sudo docker 
+attach     diff       import     node       rm         stats      version
+build      engine     info       pause      rmi        stop       volume
+builder    events     inspect    plugin     run        swarm      wait
+commit     exec       kill       port       save       system     
+config     export     load       ps         search     tag        
+container  help       login      pull       secret     top        
+context    history    logout     push       service    trust      
+cp         image      logs       rename     stack      unpause    
+create     images     network    restart    start      update     
+sysadmin@ELK-Machine:~$ sudo docker ps
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS              PORTS                                                                              NAMES
+f4a9bd0ee103        sebp/elk:761          "/usr/local/bin/star…"   3 hours ago         Up 3 hours          0.0.0.0:5044->5044/tcp, 0.0.0.0:5601->5601/tcp, 0.0.0.0:9200->9200/tcp, 9300/tcp   elk
+6587712c778e        cyberxsecurity/dvwa   "/main.sh"               12 hours ago        Up 11 hours         0.0.0.0:80->80/tcp                                                                 dvwa
+sysadmin@ELK-Machine:~$ exit
+logout
+Connection to 104.42.63.135 closed.
+root@95096b9c9214:/# curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.6.1-darwin-x86_64.tar.gz
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 23.8M  100 23.8M    0     0  9799k      0  0:00:02  0:00:02 --:--:-- 9799k
+root@95096b9c9214:/# tar xzvf filebeat-7.6.1-darwin-x86_64.tar.gz
+filebeat-7.6.1-darwin-x86_64/
+filebeat-7.6.1-darwin-x86_64/modules.d/
+filebeat-7.6.1-darwin-x86_64/kibana/
+filebeat-7.6.1-darwin-x86_64/filebeat
+filebeat-7.6.1-darwin-x86_64/filebeat.reference.yml
+filebeat-7.6.1-darwin-x86_64/module/
+filebeat-7.6.1-darwin-x86_64/README.md
+filebeat-7.6.1-darwin-x86_64/NOTICE.txt
+filebeat-7.6.1-darwin-x86_64/.build_hash.txt
+filebeat-7.6.1-darwin-x86_64/LICENSE.txt
+filebeat-7.6.1-darwin-x86_64/filebeat.yml
+filebeat-7.6.1-darwin-x86_64/fields.yml
+filebeat-7.6.1-darwin-x86_64/module/netflow/
+filebeat-7.6.1-darwin-x86_64/module/panw/
+filebeat-7.6.1-darwin-x86_64/module/activemq/
+filebeat-7.6.1-darwin-x86_64/module/postgresql/
+filebeat-7.6.1-darwin-x86_64/module/misp/
+filebeat-7.6.1-darwin-x86_64/module/osquery/
+filebeat-7.6.1-darwin-x86_64/module/kibana/
+filebeat-7.6.1-darwin-x86_64/module/logstash/
+filebeat-7.6.1-darwin-x86_64/module/redis/
+filebeat-7.6.1-darwin-x86_64/module/azure/
+filebeat-7.6.1-darwin-x86_64/module/suricata/
+filebeat-7.6.1-darwin-x86_64/module/cisco/
+filebeat-7.6.1-darwin-x86_64/module/rabbitmq/
+filebeat-7.6.1-darwin-x86_64/module/cef/
+filebeat-7.6.1-darwin-x86_64/module/mongodb/
+filebeat-7.6.1-darwin-x86_64/module/system/
+filebeat-7.6.1-darwin-x86_64/module/apache2/
+filebeat-7.6.1-darwin-x86_64/module/nats/
+filebeat-7.6.1-darwin-x86_64/module/santa/
+filebeat-7.6.1-darwin-x86_64/module/icinga/
+filebeat-7.6.1-darwin-x86_64/module/ibmmq/
+filebeat-7.6.1-darwin-x86_64/module/nginx/
+filebeat-7.6.1-darwin-x86_64/module/kafka/
+filebeat-7.6.1-darwin-x86_64/module/mysql/
+filebeat-7.6.1-darwin-x86_64/module/zeek/
+filebeat-7.6.1-darwin-x86_64/module/auditd/
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/
+filebeat-7.6.1-darwin-x86_64/module/envoyproxy/
+filebeat-7.6.1-darwin-x86_64/module/aws/
+filebeat-7.6.1-darwin-x86_64/module/iptables/
+filebeat-7.6.1-darwin-x86_64/module/coredns/
+filebeat-7.6.1-darwin-x86_64/module/iis/
+filebeat-7.6.1-darwin-x86_64/module/mssql/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/
+filebeat-7.6.1-darwin-x86_64/module/apache/
+filebeat-7.6.1-darwin-x86_64/module/traefik/
+filebeat-7.6.1-darwin-x86_64/module/haproxy/
+filebeat-7.6.1-darwin-x86_64/module/haproxy/module.yml
+filebeat-7.6.1-darwin-x86_64/module/haproxy/log/
+filebeat-7.6.1-darwin-x86_64/module/haproxy/log/config/
+filebeat-7.6.1-darwin-x86_64/module/haproxy/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/haproxy/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/haproxy/log/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/haproxy/log/config/syslog.yml
+filebeat-7.6.1-darwin-x86_64/module/haproxy/log/config/file.yml
+filebeat-7.6.1-darwin-x86_64/module/traefik/access/
+filebeat-7.6.1-darwin-x86_64/module/traefik/module.yml
+filebeat-7.6.1-darwin-x86_64/module/traefik/access/config/
+filebeat-7.6.1-darwin-x86_64/module/traefik/access/ingest/
+filebeat-7.6.1-darwin-x86_64/module/traefik/access/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/traefik/access/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/traefik/access/config/traefik-access.yml
+filebeat-7.6.1-darwin-x86_64/module/apache/access/
+filebeat-7.6.1-darwin-x86_64/module/apache/module.yml
+filebeat-7.6.1-darwin-x86_64/module/apache/error/
+filebeat-7.6.1-darwin-x86_64/module/apache/error/config/
+filebeat-7.6.1-darwin-x86_64/module/apache/error/ingest/
+filebeat-7.6.1-darwin-x86_64/module/apache/error/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/apache/error/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/apache/error/config/error.yml
+filebeat-7.6.1-darwin-x86_64/module/apache/access/config/
+filebeat-7.6.1-darwin-x86_64/module/apache/access/ingest/
+filebeat-7.6.1-darwin-x86_64/module/apache/access/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/apache/access/ingest/default.json
+filebeat-7.6.1-darwin-x86_64/module/apache/access/config/access.yml
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/module.yml
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/slowlog/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/server/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/audit/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/deprecation/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/gc/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/gc/config/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/gc/ingest/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/gc/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/gc/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/gc/config/gc.yml
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/deprecation/config/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/deprecation/ingest/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/deprecation/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/deprecation/ingest/pipeline-json.json
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/deprecation/ingest/pipeline-plaintext.json
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/deprecation/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/deprecation/config/log.yml
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/audit/config/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/audit/ingest/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/audit/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/audit/ingest/pipeline-json.json
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/audit/ingest/pipeline-plaintext.json
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/audit/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/audit/config/audit.yml
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/server/config/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/server/ingest/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/server/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/server/ingest/pipeline-json.json
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/server/ingest/pipeline-plaintext.json
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/server/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/server/config/log.yml
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/slowlog/config/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/slowlog/ingest/
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/slowlog/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/slowlog/ingest/pipeline-json.json
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/slowlog/ingest/pipeline-plaintext.json
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/slowlog/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/elasticsearch/slowlog/config/slowlog.yml
+filebeat-7.6.1-darwin-x86_64/module/mssql/log/
+filebeat-7.6.1-darwin-x86_64/module/mssql/log/config/
+filebeat-7.6.1-darwin-x86_64/module/mssql/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/mssql/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/mssql/log/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/mssql/log/config/config.yml
+filebeat-7.6.1-darwin-x86_64/module/iis/access/
+filebeat-7.6.1-darwin-x86_64/module/iis/error/
+filebeat-7.6.1-darwin-x86_64/module/iis/error/config/
+filebeat-7.6.1-darwin-x86_64/module/iis/error/ingest/
+filebeat-7.6.1-darwin-x86_64/module/iis/error/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/iis/error/ingest/default.json
+filebeat-7.6.1-darwin-x86_64/module/iis/error/config/iis-error.yml
+filebeat-7.6.1-darwin-x86_64/module/iis/access/config/
+filebeat-7.6.1-darwin-x86_64/module/iis/access/ingest/
+filebeat-7.6.1-darwin-x86_64/module/iis/access/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/iis/access/ingest/default.json
+filebeat-7.6.1-darwin-x86_64/module/iis/access/config/iis-access.yml
+filebeat-7.6.1-darwin-x86_64/module/coredns/module.yml
+filebeat-7.6.1-darwin-x86_64/module/coredns/README.md
+filebeat-7.6.1-darwin-x86_64/module/coredns/log/
+filebeat-7.6.1-darwin-x86_64/module/coredns/log/config/
+filebeat-7.6.1-darwin-x86_64/module/coredns/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/coredns/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/coredns/log/ingest/pipeline-json.yml
+filebeat-7.6.1-darwin-x86_64/module/coredns/log/ingest/pipeline-plaintext.yml
+filebeat-7.6.1-darwin-x86_64/module/coredns/log/ingest/pipeline-entry.yml
+filebeat-7.6.1-darwin-x86_64/module/coredns/log/config/coredns.yml
+filebeat-7.6.1-darwin-x86_64/module/iptables/module.yml
+filebeat-7.6.1-darwin-x86_64/module/iptables/README.md
+filebeat-7.6.1-darwin-x86_64/module/iptables/log/
+filebeat-7.6.1-darwin-x86_64/module/iptables/log/config/
+filebeat-7.6.1-darwin-x86_64/module/iptables/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/iptables/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/iptables/log/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/iptables/log/config/input.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/vpcflow/
+filebeat-7.6.1-darwin-x86_64/module/aws/module.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/elb/
+filebeat-7.6.1-darwin-x86_64/module/aws/cloudtrail/
+filebeat-7.6.1-darwin-x86_64/module/aws/s3access/
+filebeat-7.6.1-darwin-x86_64/module/aws/s3access/config/
+filebeat-7.6.1-darwin-x86_64/module/aws/s3access/ingest/
+filebeat-7.6.1-darwin-x86_64/module/aws/s3access/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/s3access/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/s3access/config/file.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/s3access/config/s3.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/cloudtrail/config/
+filebeat-7.6.1-darwin-x86_64/module/aws/cloudtrail/ingest/
+filebeat-7.6.1-darwin-x86_64/module/aws/cloudtrail/README.md
+filebeat-7.6.1-darwin-x86_64/module/aws/cloudtrail/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/cloudtrail/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/cloudtrail/config/cloudtrail.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/elb/config/
+filebeat-7.6.1-darwin-x86_64/module/aws/elb/ingest/
+filebeat-7.6.1-darwin-x86_64/module/aws/elb/README.md
+filebeat-7.6.1-darwin-x86_64/module/aws/elb/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/elb/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/elb/config/file.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/elb/config/s3.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/vpcflow/config/
+filebeat-7.6.1-darwin-x86_64/module/aws/vpcflow/ingest/
+filebeat-7.6.1-darwin-x86_64/module/aws/vpcflow/README.md
+filebeat-7.6.1-darwin-x86_64/module/aws/vpcflow/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/vpcflow/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/aws/vpcflow/config/input.yml
+filebeat-7.6.1-darwin-x86_64/module/envoyproxy/module.yml
+filebeat-7.6.1-darwin-x86_64/module/envoyproxy/README.md
+filebeat-7.6.1-darwin-x86_64/module/envoyproxy/log/
+filebeat-7.6.1-darwin-x86_64/module/envoyproxy/log/config/
+filebeat-7.6.1-darwin-x86_64/module/envoyproxy/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/envoyproxy/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/envoyproxy/log/ingest/pipeline-json.json
+filebeat-7.6.1-darwin-x86_64/module/envoyproxy/log/ingest/pipeline-entry.json
+filebeat-7.6.1-darwin-x86_64/module/envoyproxy/log/ingest/pipeline-tcp.json
+filebeat-7.6.1-darwin-x86_64/module/envoyproxy/log/ingest/pipeline-geo-as.yml
+filebeat-7.6.1-darwin-x86_64/module/envoyproxy/log/ingest/pipeline-plaintext.json
+filebeat-7.6.1-darwin-x86_64/module/envoyproxy/log/ingest/pipeline-http.json
+filebeat-7.6.1-darwin-x86_64/module/envoyproxy/log/config/envoyproxy.yml
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/vpcflow/
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/firewall/
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/audit/
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/audit/config/
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/audit/ingest/
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/audit/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/audit/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/audit/config/input.yml
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/audit/config/pipeline.js
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/firewall/config/
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/firewall/ingest/
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/firewall/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/firewall/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/firewall/config/input.yml
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/firewall/config/pipeline.js
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/vpcflow/config/
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/vpcflow/ingest/
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/vpcflow/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/vpcflow/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/vpcflow/config/input.yml
+filebeat-7.6.1-darwin-x86_64/module/googlecloud/vpcflow/config/pipeline.js
+filebeat-7.6.1-darwin-x86_64/module/auditd/module.yml
+filebeat-7.6.1-darwin-x86_64/module/auditd/log/
+filebeat-7.6.1-darwin-x86_64/module/auditd/log/config/
+filebeat-7.6.1-darwin-x86_64/module/auditd/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/auditd/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/auditd/log/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/auditd/log/config/log.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/kerberos/
+filebeat-7.6.1-darwin-x86_64/module/zeek/intel/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ftp/
+filebeat-7.6.1-darwin-x86_64/module/zeek/pe/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ssl/
+filebeat-7.6.1-darwin-x86_64/module/zeek/syslog/
+filebeat-7.6.1-darwin-x86_64/module/zeek/snmp/
+filebeat-7.6.1-darwin-x86_64/module/zeek/connection/
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_mapping/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ntlm/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dce_rpc/
+filebeat-7.6.1-darwin-x86_64/module/zeek/module.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/irc/
+filebeat-7.6.1-darwin-x86_64/module/zeek/rdp/
+filebeat-7.6.1-darwin-x86_64/module/zeek/radius/
+filebeat-7.6.1-darwin-x86_64/module/zeek/rfb/
+filebeat-7.6.1-darwin-x86_64/module/zeek/notice/
+filebeat-7.6.1-darwin-x86_64/module/zeek/README.md
+filebeat-7.6.1-darwin-x86_64/module/zeek/tunnel/
+filebeat-7.6.1-darwin-x86_64/module/zeek/x509/
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_cmd/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ssh/
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_files/
+filebeat-7.6.1-darwin-x86_64/module/zeek/http/
+filebeat-7.6.1-darwin-x86_64/module/zeek/smtp/
+filebeat-7.6.1-darwin-x86_64/module/zeek/README-developer.md
+filebeat-7.6.1-darwin-x86_64/module/zeek/mysql/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dhcp/
+filebeat-7.6.1-darwin-x86_64/module/zeek/files/
+filebeat-7.6.1-darwin-x86_64/module/zeek/capture_loss/
+filebeat-7.6.1-darwin-x86_64/module/zeek/sip/
+filebeat-7.6.1-darwin-x86_64/module/zeek/socks/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ocsp/
+filebeat-7.6.1-darwin-x86_64/module/zeek/traceroute/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dns/
+filebeat-7.6.1-darwin-x86_64/module/zeek/modbus/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dnp3/
+filebeat-7.6.1-darwin-x86_64/module/zeek/weird/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dpd/
+filebeat-7.6.1-darwin-x86_64/module/zeek/stats/
+filebeat-7.6.1-darwin-x86_64/module/zeek/stats/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/stats/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/stats/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/stats/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/stats/config/stats.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/dpd/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dpd/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dpd/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/dpd/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/dpd/config/dpd.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/weird/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/weird/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/weird/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/weird/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/weird/config/weird.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/dnp3/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dnp3/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dnp3/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/dnp3/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/dnp3/config/dnp3.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/modbus/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/modbus/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/modbus/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/modbus/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/modbus/config/modbus.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/dns/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dns/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dns/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/dns/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/dns/config/dns.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/traceroute/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/traceroute/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/traceroute/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/traceroute/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/traceroute/config/traceroute.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/ocsp/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ocsp/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ocsp/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/ocsp/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/ocsp/config/ocsp.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/socks/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/socks/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/socks/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/socks/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/socks/config/socks.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/sip/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/sip/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/sip/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/sip/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/sip/config/sip.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/capture_loss/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/capture_loss/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/capture_loss/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/capture_loss/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/capture_loss/config/capture_loss.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/files/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/files/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/files/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/files/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/files/config/files.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/dhcp/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dhcp/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dhcp/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/dhcp/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/dhcp/config/dhcp.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/mysql/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/mysql/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/mysql/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/mysql/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/mysql/config/mysql.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/smtp/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/smtp/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/smtp/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/smtp/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/smtp/config/smtp.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/http/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/http/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/http/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/http/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/http/config/http.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_files/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_files/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_files/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_files/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_files/config/smb_files.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/ssh/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ssh/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ssh/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/ssh/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/ssh/config/ssh.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_cmd/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_cmd/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_cmd/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_cmd/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_cmd/config/smb_cmd.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/x509/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/x509/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/x509/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/x509/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/x509/config/x509.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/tunnel/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/tunnel/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/tunnel/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/tunnel/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/tunnel/config/tunnel.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/notice/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/notice/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/notice/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/notice/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/notice/config/notice.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/rfb/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/rfb/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/rfb/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/rfb/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/rfb/config/rfb.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/radius/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/radius/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/radius/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/radius/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/radius/config/radius.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/rdp/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/rdp/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/rdp/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/rdp/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/rdp/config/rdp.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/irc/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/irc/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/irc/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/irc/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/irc/config/irc.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/dce_rpc/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dce_rpc/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/dce_rpc/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/dce_rpc/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/dce_rpc/config/dce_rpc.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/ntlm/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ntlm/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ntlm/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/ntlm/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/ntlm/config/ntlm.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_mapping/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_mapping/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_mapping/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_mapping/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/smb_mapping/config/smb_mapping.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/connection/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/connection/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/connection/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/connection/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/connection/config/connection.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/snmp/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/snmp/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/snmp/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/snmp/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/snmp/config/snmp.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/syslog/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/syslog/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/syslog/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/syslog/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/syslog/config/syslog.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/ssl/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ssl/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ssl/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/ssl/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/ssl/config/ssl.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/pe/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/pe/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/pe/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/pe/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/pe/config/pe.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/ftp/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ftp/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/ftp/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/ftp/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/ftp/config/ftp.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/intel/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/intel/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/intel/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/intel/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/intel/config/intel.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/kerberos/config/
+filebeat-7.6.1-darwin-x86_64/module/zeek/kerberos/ingest/
+filebeat-7.6.1-darwin-x86_64/module/zeek/kerberos/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/zeek/kerberos/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/zeek/kerberos/config/kerberos.yml
+filebeat-7.6.1-darwin-x86_64/module/mysql/module.yml
+filebeat-7.6.1-darwin-x86_64/module/mysql/slowlog/
+filebeat-7.6.1-darwin-x86_64/module/mysql/error/
+filebeat-7.6.1-darwin-x86_64/module/mysql/error/config/
+filebeat-7.6.1-darwin-x86_64/module/mysql/error/ingest/
+filebeat-7.6.1-darwin-x86_64/module/mysql/error/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/mysql/error/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/mysql/error/config/error.yml
+filebeat-7.6.1-darwin-x86_64/module/mysql/slowlog/config/
+filebeat-7.6.1-darwin-x86_64/module/mysql/slowlog/ingest/
+filebeat-7.6.1-darwin-x86_64/module/mysql/slowlog/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/mysql/slowlog/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/mysql/slowlog/config/slowlog.yml
+filebeat-7.6.1-darwin-x86_64/module/kafka/module.yml
+filebeat-7.6.1-darwin-x86_64/module/kafka/log/
+filebeat-7.6.1-darwin-x86_64/module/kafka/log/config/
+filebeat-7.6.1-darwin-x86_64/module/kafka/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/kafka/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/kafka/log/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/kafka/log/config/log.yml
+filebeat-7.6.1-darwin-x86_64/module/nginx/access/
+filebeat-7.6.1-darwin-x86_64/module/nginx/module.yml
+filebeat-7.6.1-darwin-x86_64/module/nginx/error/
+filebeat-7.6.1-darwin-x86_64/module/nginx/error/config/
+filebeat-7.6.1-darwin-x86_64/module/nginx/error/ingest/
+filebeat-7.6.1-darwin-x86_64/module/nginx/error/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/nginx/error/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/nginx/error/config/nginx-error.yml
+filebeat-7.6.1-darwin-x86_64/module/nginx/access/config/
+filebeat-7.6.1-darwin-x86_64/module/nginx/access/ingest/
+filebeat-7.6.1-darwin-x86_64/module/nginx/access/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/nginx/access/ingest/default.json
+filebeat-7.6.1-darwin-x86_64/module/nginx/access/config/nginx-access.yml
+filebeat-7.6.1-darwin-x86_64/module/ibmmq/module.yml
+filebeat-7.6.1-darwin-x86_64/module/ibmmq/errorlog/
+filebeat-7.6.1-darwin-x86_64/module/ibmmq/errorlog/config/
+filebeat-7.6.1-darwin-x86_64/module/ibmmq/errorlog/ingest/
+filebeat-7.6.1-darwin-x86_64/module/ibmmq/errorlog/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/ibmmq/errorlog/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/ibmmq/errorlog/config/errorlog.yml
+filebeat-7.6.1-darwin-x86_64/module/icinga/module.yml
+filebeat-7.6.1-darwin-x86_64/module/icinga/startup/
+filebeat-7.6.1-darwin-x86_64/module/icinga/main/
+filebeat-7.6.1-darwin-x86_64/module/icinga/debug/
+filebeat-7.6.1-darwin-x86_64/module/icinga/debug/config/
+filebeat-7.6.1-darwin-x86_64/module/icinga/debug/ingest/
+filebeat-7.6.1-darwin-x86_64/module/icinga/debug/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/icinga/debug/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/icinga/debug/config/debug.yml
+filebeat-7.6.1-darwin-x86_64/module/icinga/main/config/
+filebeat-7.6.1-darwin-x86_64/module/icinga/main/ingest/
+filebeat-7.6.1-darwin-x86_64/module/icinga/main/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/icinga/main/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/icinga/main/config/main.yml
+filebeat-7.6.1-darwin-x86_64/module/icinga/startup/config/
+filebeat-7.6.1-darwin-x86_64/module/icinga/startup/ingest/
+filebeat-7.6.1-darwin-x86_64/module/icinga/startup/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/icinga/startup/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/icinga/startup/config/startup.yml
+filebeat-7.6.1-darwin-x86_64/module/santa/module.yml
+filebeat-7.6.1-darwin-x86_64/module/santa/log/
+filebeat-7.6.1-darwin-x86_64/module/santa/log/config/
+filebeat-7.6.1-darwin-x86_64/module/santa/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/santa/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/santa/log/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/santa/log/config/file.yml
+filebeat-7.6.1-darwin-x86_64/module/nats/module.yml
+filebeat-7.6.1-darwin-x86_64/module/nats/log/
+filebeat-7.6.1-darwin-x86_64/module/nats/log/config/
+filebeat-7.6.1-darwin-x86_64/module/nats/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/nats/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/nats/log/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/nats/log/config/log.yml
+filebeat-7.6.1-darwin-x86_64/module/apache2/module.yml
+filebeat-7.6.1-darwin-x86_64/module/system/syslog/
+filebeat-7.6.1-darwin-x86_64/module/system/auth/
+filebeat-7.6.1-darwin-x86_64/module/system/module.yml
+filebeat-7.6.1-darwin-x86_64/module/system/auth/config/
+filebeat-7.6.1-darwin-x86_64/module/system/auth/ingest/
+filebeat-7.6.1-darwin-x86_64/module/system/auth/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/system/auth/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/system/auth/config/auth.yml
+filebeat-7.6.1-darwin-x86_64/module/system/syslog/config/
+filebeat-7.6.1-darwin-x86_64/module/system/syslog/ingest/
+filebeat-7.6.1-darwin-x86_64/module/system/syslog/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/system/syslog/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/system/syslog/config/syslog.yml
+filebeat-7.6.1-darwin-x86_64/module/mongodb/module.yml
+filebeat-7.6.1-darwin-x86_64/module/mongodb/log/
+filebeat-7.6.1-darwin-x86_64/module/mongodb/log/config/
+filebeat-7.6.1-darwin-x86_64/module/mongodb/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/mongodb/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/mongodb/log/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/mongodb/log/config/log.yml
+filebeat-7.6.1-darwin-x86_64/module/cef/log/
+filebeat-7.6.1-darwin-x86_64/module/cef/log/config/
+filebeat-7.6.1-darwin-x86_64/module/cef/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/cef/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/cef/log/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/cef/log/config/input.yml
+filebeat-7.6.1-darwin-x86_64/module/rabbitmq/log/
+filebeat-7.6.1-darwin-x86_64/module/rabbitmq/log/config/
+filebeat-7.6.1-darwin-x86_64/module/rabbitmq/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/rabbitmq/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/rabbitmq/log/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/rabbitmq/log/config/log.yml
+filebeat-7.6.1-darwin-x86_64/module/cisco/ftd/
+filebeat-7.6.1-darwin-x86_64/module/cisco/module.yml
+filebeat-7.6.1-darwin-x86_64/module/cisco/shared/
+filebeat-7.6.1-darwin-x86_64/module/cisco/ios/
+filebeat-7.6.1-darwin-x86_64/module/cisco/README.md
+filebeat-7.6.1-darwin-x86_64/module/cisco/asa/
+filebeat-7.6.1-darwin-x86_64/module/cisco/asa/config/
+filebeat-7.6.1-darwin-x86_64/module/cisco/asa/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/cisco/asa/config/input.yml
+filebeat-7.6.1-darwin-x86_64/module/cisco/ios/pipeline_test.go
+filebeat-7.6.1-darwin-x86_64/module/cisco/ios/config/
+filebeat-7.6.1-darwin-x86_64/module/cisco/ios/ingest/
+filebeat-7.6.1-darwin-x86_64/module/cisco/ios/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/cisco/ios/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/cisco/ios/config/input.yml
+filebeat-7.6.1-darwin-x86_64/module/cisco/ios/config/pipeline.js
+filebeat-7.6.1-darwin-x86_64/module/cisco/shared/gen.go
+filebeat-7.6.1-darwin-x86_64/module/cisco/shared/stringset.go
+filebeat-7.6.1-darwin-x86_64/module/cisco/shared/gen-ecs-mapping-docs.go
+filebeat-7.6.1-darwin-x86_64/module/cisco/shared/ingest/
+filebeat-7.6.1-darwin-x86_64/module/cisco/shared/security-mappings.csv
+filebeat-7.6.1-darwin-x86_64/module/cisco/shared/gen-ftd-ecs-mapping.go
+filebeat-7.6.1-darwin-x86_64/module/cisco/shared/ingest/asa-ftd-pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/cisco/ftd/config/
+filebeat-7.6.1-darwin-x86_64/module/cisco/ftd/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/cisco/ftd/config/input.yml
+filebeat-7.6.1-darwin-x86_64/module/suricata/module.yml
+filebeat-7.6.1-darwin-x86_64/module/suricata/README.md
+filebeat-7.6.1-darwin-x86_64/module/suricata/eve/
+filebeat-7.6.1-darwin-x86_64/module/suricata/eve/config/
+filebeat-7.6.1-darwin-x86_64/module/suricata/eve/ingest/
+filebeat-7.6.1-darwin-x86_64/module/suricata/eve/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/suricata/eve/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/suricata/eve/config/eve.yml
+filebeat-7.6.1-darwin-x86_64/module/azure/signinlogs/
+filebeat-7.6.1-darwin-x86_64/module/azure/azure-shared-pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/azure/module.yml
+filebeat-7.6.1-darwin-x86_64/module/azure/activitylogs/
+filebeat-7.6.1-darwin-x86_64/module/azure/auditlogs/
+filebeat-7.6.1-darwin-x86_64/module/azure/auditlogs/config/
+filebeat-7.6.1-darwin-x86_64/module/azure/auditlogs/ingest/
+filebeat-7.6.1-darwin-x86_64/module/azure/auditlogs/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/azure/auditlogs/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/azure/auditlogs/config/azure-eventhub.yml
+filebeat-7.6.1-darwin-x86_64/module/azure/auditlogs/config/file.yml
+filebeat-7.6.1-darwin-x86_64/module/azure/activitylogs/config/
+filebeat-7.6.1-darwin-x86_64/module/azure/activitylogs/ingest/
+filebeat-7.6.1-darwin-x86_64/module/azure/activitylogs/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/azure/activitylogs/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/azure/activitylogs/config/azure-eventhub.yml
+filebeat-7.6.1-darwin-x86_64/module/azure/activitylogs/config/file.yml
+filebeat-7.6.1-darwin-x86_64/module/azure/signinlogs/config/
+filebeat-7.6.1-darwin-x86_64/module/azure/signinlogs/ingest/
+filebeat-7.6.1-darwin-x86_64/module/azure/signinlogs/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/azure/signinlogs/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/azure/signinlogs/config/azure-eventhub.yml
+filebeat-7.6.1-darwin-x86_64/module/azure/signinlogs/config/file.yml
+filebeat-7.6.1-darwin-x86_64/module/redis/module.yml
+filebeat-7.6.1-darwin-x86_64/module/redis/slowlog/
+filebeat-7.6.1-darwin-x86_64/module/redis/log/
+filebeat-7.6.1-darwin-x86_64/module/redis/log/config/
+filebeat-7.6.1-darwin-x86_64/module/redis/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/redis/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/redis/log/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/redis/log/config/log.yml
+filebeat-7.6.1-darwin-x86_64/module/redis/slowlog/config/
+filebeat-7.6.1-darwin-x86_64/module/redis/slowlog/ingest/
+filebeat-7.6.1-darwin-x86_64/module/redis/slowlog/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/redis/slowlog/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/redis/slowlog/config/slowlog.yml
+filebeat-7.6.1-darwin-x86_64/module/logstash/module.yml
+filebeat-7.6.1-darwin-x86_64/module/logstash/slowlog/
+filebeat-7.6.1-darwin-x86_64/module/logstash/log/
+filebeat-7.6.1-darwin-x86_64/module/logstash/log/config/
+filebeat-7.6.1-darwin-x86_64/module/logstash/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/logstash/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/logstash/log/ingest/pipeline-json.json
+filebeat-7.6.1-darwin-x86_64/module/logstash/log/ingest/pipeline-plain.json
+filebeat-7.6.1-darwin-x86_64/module/logstash/log/config/log.yml
+filebeat-7.6.1-darwin-x86_64/module/logstash/slowlog/config/
+filebeat-7.6.1-darwin-x86_64/module/logstash/slowlog/ingest/
+filebeat-7.6.1-darwin-x86_64/module/logstash/slowlog/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/logstash/slowlog/ingest/pipeline-json.json
+filebeat-7.6.1-darwin-x86_64/module/logstash/slowlog/ingest/pipeline-plain.json
+filebeat-7.6.1-darwin-x86_64/module/logstash/slowlog/config/slowlog.yml
+filebeat-7.6.1-darwin-x86_64/module/kibana/module.yml
+filebeat-7.6.1-darwin-x86_64/module/kibana/log/
+filebeat-7.6.1-darwin-x86_64/module/kibana/log/config/
+filebeat-7.6.1-darwin-x86_64/module/kibana/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/kibana/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/kibana/log/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/kibana/log/config/log.yml
+filebeat-7.6.1-darwin-x86_64/module/osquery/result/
+filebeat-7.6.1-darwin-x86_64/module/osquery/module.yml
+filebeat-7.6.1-darwin-x86_64/module/osquery/result/config/
+filebeat-7.6.1-darwin-x86_64/module/osquery/result/ingest/
+filebeat-7.6.1-darwin-x86_64/module/osquery/result/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/osquery/result/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/osquery/result/config/result.yml
+filebeat-7.6.1-darwin-x86_64/module/misp/module.yml
+filebeat-7.6.1-darwin-x86_64/module/misp/threat/
+filebeat-7.6.1-darwin-x86_64/module/misp/README.md
+filebeat-7.6.1-darwin-x86_64/module/misp/threat/config/
+filebeat-7.6.1-darwin-x86_64/module/misp/threat/ingest/
+filebeat-7.6.1-darwin-x86_64/module/misp/threat/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/misp/threat/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/misp/threat/config/input.yml
+filebeat-7.6.1-darwin-x86_64/module/misp/threat/config/pipeline.js
+filebeat-7.6.1-darwin-x86_64/module/postgresql/module.yml
+filebeat-7.6.1-darwin-x86_64/module/postgresql/log/
+filebeat-7.6.1-darwin-x86_64/module/postgresql/log/config/
+filebeat-7.6.1-darwin-x86_64/module/postgresql/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/postgresql/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/postgresql/log/ingest/pipeline.json
+filebeat-7.6.1-darwin-x86_64/module/postgresql/log/config/log.yml
+filebeat-7.6.1-darwin-x86_64/module/activemq/module.yml
+filebeat-7.6.1-darwin-x86_64/module/activemq/audit/
+filebeat-7.6.1-darwin-x86_64/module/activemq/log/
+filebeat-7.6.1-darwin-x86_64/module/activemq/log/config/
+filebeat-7.6.1-darwin-x86_64/module/activemq/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/activemq/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/activemq/log/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/activemq/log/config/log.yml
+filebeat-7.6.1-darwin-x86_64/module/activemq/audit/config/
+filebeat-7.6.1-darwin-x86_64/module/activemq/audit/ingest/
+filebeat-7.6.1-darwin-x86_64/module/activemq/audit/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/activemq/audit/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/activemq/audit/config/audit.yml
+filebeat-7.6.1-darwin-x86_64/module/panw/module.yml
+filebeat-7.6.1-darwin-x86_64/module/panw/README.md
+filebeat-7.6.1-darwin-x86_64/module/panw/panos/
+filebeat-7.6.1-darwin-x86_64/module/panw/panos/config/
+filebeat-7.6.1-darwin-x86_64/module/panw/panos/ingest/
+filebeat-7.6.1-darwin-x86_64/module/panw/panos/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/panw/panos/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/panw/panos/config/input.yml
+filebeat-7.6.1-darwin-x86_64/module/netflow/dashboards.yml
+filebeat-7.6.1-darwin-x86_64/module/netflow/log/
+filebeat-7.6.1-darwin-x86_64/module/netflow/log/config/
+filebeat-7.6.1-darwin-x86_64/module/netflow/log/ingest/
+filebeat-7.6.1-darwin-x86_64/module/netflow/log/manifest.yml
+filebeat-7.6.1-darwin-x86_64/module/netflow/log/ingest/pipeline.yml
+filebeat-7.6.1-darwin-x86_64/module/netflow/log/config/netflow.yml
+filebeat-7.6.1-darwin-x86_64/kibana/7/
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-netflow-conversation-partners.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-activemq-application-events.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-cef-endpoint-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-azure-user-activity.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-logstash-slowlog.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-panw-network-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-auditd.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-azure-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-nginx-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-apache.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-Zeek-Overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-auth-sudo-commands.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-cef-microsoft-dns.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-new-users-and-groups.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-netflow-top-n.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/osquery-compliance.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-netflow-traffic-analysis.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-Suricata-Overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Coredns-Overview-Dashboard.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-Kafka-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/osquery-rootkit.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-ssh-login-attempts.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-santa-log-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-redis.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-icinga-startup-errors.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-syslog.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-netflow-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-Mongodb-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-logstash-log.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-nats-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-aws-s3access-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-cef-endpoint-os-activity.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-aws-elb-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-Iptables-Overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-Suricata-Alert-Overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-panw-threat-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-cef-network-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-netflow-flow-exporters.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-netflow-geo-location.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-iis.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-netflow-autonomous-systems.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-IBMMQ-Overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-Envoyproxy-Overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-icinga-debug-log.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-haproxy-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-MISP-Overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-cef-network-suspicious-activity.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-network-flows-top-n.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-activemq-audit-events.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/filebeat-netflow-flow-records.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-nginx-logs.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-Postgresql-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-Cisco-ASA.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-traefik-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-azure-alerts-overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-Iptables-Ubiquiti-Firewall-Overview.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-icinga-main-log.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-mysql.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-Postgresql-slowlogs.json
+filebeat-7.6.1-darwin-x86_64/kibana/7/dashboard/Filebeat-aws-vpcflow-overview.json
+filebeat-7.6.1-darwin-x86_64/modules.d/postgresql.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/system.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/googlecloud.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/icinga.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/iptables.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/elasticsearch.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/mysql.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/logstash.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/apache.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/activemq.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/iis.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/ibmmq.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/coredns.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/rabbitmq.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/envoyproxy.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/cisco.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/panw.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/kafka.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/cef.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/nginx.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/redis.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/nats.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/traefik.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/zeek.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/auditd.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/aws.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/misp.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/mssql.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/kibana.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/suricata.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/osquery.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/azure.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/haproxy.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/mongodb.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/netflow.yml.disabled
+filebeat-7.6.1-darwin-x86_64/modules.d/santa.yml.disabled
+root@95096b9c9214:/# cd filebeat-7.6.1-darwin-x86_64/ nano filebeat.config.yml
+bash: cd: too many arguments
+root@95096b9c9214:/# nano filebeat.congif.yml
+root@95096b9c9214:/# nano filebeat.config.yml
+root@95096b9c9214:/# nano filebeat.config.yml
+root@95096b9c9214:/# mkdir files        
+root@95096b9c9214:/# nano filebeat.config.yml
+root@95096b9c9214:/# /etc/files
+bash: /etc/files: No such file or directory
+root@95096b9c9214:/# nano filebeat.config.yml
+root@95096b9c9214:/# ls
+bin   filebeat-7.6.1-darwin-x86_64         home   mnt   run   tmp
+boot  filebeat-7.6.1-darwin-x86_64.tar.gz  lib    opt   sbin  usr
+dev   filebeat.config.yml                  lib64  proc  srv   var
+etc   files                                media  root  sys
+root@95096b9c9214:/# cd ..
+root@95096b9c9214:/# /etc/ansible 
+bash: /etc/ansible: Is a directory
+root@95096b9c9214:/# mv -r files /etc/ansible
+mv: invalid option -- 'r'
+Try 'mv --help' for more information.
+root@95096b9c9214:/# mv -R files /etc/ansible
+mv: invalid option -- 'R'
+Try 'mv --help' for more information.
+root@95096b9c9214:/# mv filebeat.config.yml /etc/ansible
+root@95096b9c9214:/# cd /etc/ansible
+root@95096b9c9214:/etc/ansible# mkdir files
+root@95096b9c9214:/etc/ansible# mv filebeat.config.yml  files/filebeat-config.yml
+root@95096b9c9214:/etc/ansible# ls
+ansible.cfg  ansiblessh.pub  files  install-elk.yml  roles
+ansiblessh   dockerfile.yml  hosts  my-playbook.yml
+root@95096b9c9214:/etc/ansible# cd files 
+root@95096b9c9214:/etc/ansible/files# ls
+filebeat-config.yml
+root@95096b9c9214:/etc/ansible/files# nano filebeat-playbook.yml
+root@95096b9c9214:/etc/ansible/files# ls
+filebeat-config.yml  filebeat-playbook.yml
+root@95096b9c9214:/etc/ansible/files# mv filebeat-playbook.yml /etc/ansible
+root@95096b9c9214:/etc/ansible/files# ls
+filebeat-config.yml
+root@95096b9c9214:/etc/ansible/files# cd ..
+root@95096b9c9214:/etc/ansible# ls
+ansible.cfg  ansiblessh.pub  filebeat-playbook.yml  hosts            my-playbook.yml
+ansiblessh   dockerfile.yml  files                  install-elk.yml  roles
+root@95096b9c9214:/etc/ansible# ansible-playbook file
+filebeat-playbook.yml  files/                 
+root@95096b9c9214:/etc/ansible# ansible-playbook filebeat-playbook.yml
+
+PLAY [installing and launching filebeat] *******************************************************
+
+TASK [Gathering Facts] *************************************************************************
+ok: [10.0.0.8]
+ok: [10.0.0.4]
+ok: [10.0.0.5]
+
+TASK [download filebeat deb] *******************************************************************
+[WARNING]: Consider using the get_url or uri module rather than running 'curl'.  If you need to
+use command because get_url or uri is insufficient you can add 'warn: false' to this command
+task or set 'command_warnings=False' in ansible.cfg to get rid of this message.
+
+changed: [10.0.0.8]
+changed: [10.0.0.4]
+changed: [10.0.0.5]
+
+TASK [install filebeat deb] ********************************************************************
+changed: [10.0.0.8]
+changed: [10.0.0.4]
+changed: [10.0.0.5]
+
+TASK [drop in filebeat.yml] ********************************************************************
+changed: [10.0.0.4]
+changed: [10.0.0.8]
+changed: [10.0.0.5]
+
+TASK [enable and configure system module] ******************************************************
+changed: [10.0.0.4]
+changed: [10.0.0.8]
+changed: [10.0.0.5]
+
+TASK [setup filebeat] **************************************************************************
+changed: [10.0.0.4]
+changed: [10.0.0.8]
+changed: [10.0.0.5]
+
+TASK [start filebeat service] ******************************************************************
+[WARNING]: Consider using the service module rather than running 'service'.  If you need to use
+command because service is insufficient you can add 'warn: false' to this command task or set
+'command_warnings=False' in ansible.cfg to get rid of this message.
+
+changed: [10.0.0.8]
+changed: [10.0.0.4]
+changed: [10.0.0.5]
+
+TASK [enable service filebeat on boot] *********************************************************
+changed: [10.0.0.8]
+changed: [10.0.0.4]
+changed: [10.0.0.5]
+
+PLAY RECAP *************************************************************************************
+10.0.0.4                   : ok=8    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+10.0.0.5                   : ok=8    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+10.0.0.8                   : ok=8    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+root@95096b9c9214:/etc/ansible# nano-filebeat.yml
+bash: nano-filebeat.yml: command not found
+root@95096b9c9214:/etc/ansible# ls
+ansible.cfg  ansiblessh.pub  filebeat-playbook.yml  hosts            my-playbook.yml
+ansiblessh   dockerfile.yml  files                  install-elk.yml  roles
+root@95096b9c9214:/etc/ansible# cd files
+root@95096b9c9214:/etc/ansible/files# ls
+filebeat-config.yml
+root@95096b9c9214:/etc/ansible/files# nano filebeat-config.yml
+
+  GNU nano 2.9.3                                   filebeat-config.yml                                              
+
+######################## Filebeat Configuration ############################
+# This file is a full configuration example documenting all non-deprecated
+# options in comments. For a shorter configuration example, that contains only
+# the most common options, please see filebeat.yml in the same directory.
+#
+# You can find the full configuration reference here:
+# https://www.elastic.co/guide/en/beats/filebeat/index.html
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
+
+#==========================  Modules configuration =============================
+filebeat.modules:
+
+#-------------------------------- System Module --------------------------------
+#- module: system
+  # Syslog
+  #syslog:
+    #enabled: true
+
+    # Set custom paths for the log files. If left empty,
+    # Filebeat will choose the paths depending on your OS.
+    #var.paths:
+
+    # Input configuration (advanced). Any input configuration option
+    # can be added under this section.
+    #input:
+
+  # Authorization logs
+  #auth:
+    #enabled: true
+
+    # Set custom paths for the log files. If left empty,
+    # Filebeat will choose the paths depending on your OS.
+    #var.paths:
+
+    # Input configuration (advanced). Any input configuration option
+    # can be added under this section.
+
+^G Get Help     ^O Write Out    ^W Where Is     ^K Cut Text     ^J Justify      ^C Cur Pos      M-U Undo
+^X Exit         ^R Read File    ^\ Replace      ^U Uncut Text   ^T To Spell     ^_ Go To Line   M-E Redo
