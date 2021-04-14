@@ -6,8 +6,19 @@ https://github.com/ritzmeya/ELK_2021/blob/main/Diagram/ELK_SERVER_DEPLOYMENT.pdf
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the filebeat-playbook.yml file may be used to install only certain pieces of it, such as Filebeat.
 
-  -https://github.com/ritzmeya/ELK_2021/blob/main/Ansible/filebeat-playbook.yml
-  
+Install Elk.yml
+https://github.com/ritzmeya/ELK_2021/blob/main/Ansible/install-elk.yml
+
+filebeat-playbook.yml
+https://github.com/ritzmeya/ELK_2021/blob/main/Ansible/filebeat-playbook.yml
+
+filebeat-config.yml
+https://github.com/ritzmeya/ELK_2021/blob/main/Ansible/filebeat-config.yml
+
+Ansible-config.yml
+https://github.com/ritzmeya/ELK_2021/blob/main/Ansible/ansible_config.yml
+![image](https://user-images.githubusercontent.com/74203852/114756437-bb350980-9d28-11eb-8de4-a2c5ca95e15c.png)
+
 
 This document contains the following details:-
 - Description of the Topology
@@ -58,18 +69,21 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the jump box machine (Red Team VM) can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- 45.72.193.55
+- 45.72.xxx.xx (personal home IP address)
 
 Machines within the network can only be accessed by Ansible Container.
 - Red Team VM machine was allowed to access ELK VM. IP address 13.82.110.28
 
 A summary of the access policies in place can be found in the table below.
 
-| Name                   | Publicly Accessible | Allowed IP Addresses |
-|------------------------|---------------------|----------------------|
-|Jump Box                | Yes                 | 10.0.0.4             |
-|Red Team Load Balancer  | Yes                 | 20.185.179.54        |
-|Port 5601               | Yes                 | 45.72.230.103        |
+| Name                   |Port | Publicly Accessible  | Allowed IP Addresses |
+|------------------------|-----|----------------------|----------------------|
+|Jump Box                |22   | Yes                  | 10.0.0.4             |
+|Red Team Load Balancer  |     |Yes                   |                      |
+|Web 1                   |80.  |yes. via load balancer|20.185.179.54         |
+|Web 2                   |22.  |yes. Via load balancer|20.185.179.54         |
+|Elk VM                  |5601.| No                   |                      |
+|                        |     |45.72.230.103         |                      |
 
 ### Elk Configuration
 
@@ -82,6 +96,7 @@ The playbook implements the following tasks:
 3. Install Docker python module
 4. Download and launch a docker web container
 5. Enable docker service
+The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 https://github.com/ritzmeya/ELK_2021/blob/main/Screenshots/Screen%20Shot-AFTER-RUNNING-ANSIBLECONFIGFILE.png
@@ -121,4 +136,4 @@ https://github.com/ritzmeya/ELK_2021/blob/main/Screenshots/Screen%20Shot%20fileb
 - _Which URL do you navigate to in order to check that the ELK server is running?
 http://104.42.63.135:5601/app/kibana#/home/tutorial/systemLogs
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
+
