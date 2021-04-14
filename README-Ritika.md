@@ -17,8 +17,6 @@ https://github.com/ritzmeya/ELK_2021/blob/main/Ansible/filebeat-config.yml
 
 Ansible-config.yml
 https://github.com/ritzmeya/ELK_2021/blob/main/Ansible/ansible_config.yml
-![image](https://user-images.githubusercontent.com/74203852/114756437-bb350980-9d28-11eb-8de4-a2c5ca95e15c.png)
-
 
 This document contains the following details:-
 - Description of the Topology
